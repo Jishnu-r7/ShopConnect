@@ -1,0 +1,13 @@
+.card{
+    margin-top: 3%;
+    margin-right: 3%;
+    margin-left: 2%;
+    background-color: antiquewhite;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px; /* Optional gap between grid items */
+    justify-content: center;
+    align-items: center;
+}

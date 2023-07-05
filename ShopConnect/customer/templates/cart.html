@@ -1,0 +1,130 @@
+{% extends "custbase.html" %}
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <title>{% block title %}Cart{% endblock %}</title>
+    {% load static %}
+</head>
+<body>
+    {% block content %}
+    <div id="overlay" class="overlay"></div>
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+    <script src="{% static 'js/cart.js' %}"></script>
+
+    <div class="container mt-5 mb-5">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-error">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-8">
+                <div class="p-2">
+                    <h4>Shop Name:  {{shop}}</h4>
+                </div>
+                {% for key, value in data.items %}
+                <div class="d-flex flex-row justify-content-between align-items-center p-2 bg-white mt-4 px-3 rounded" class="for_calc">
+                    <div class="mr-1"><img class="rounded" src="{% static value.item_photo %}" width="70"></div>
+                    <div class="d-flex flex-column align-items-center product-details"><span class="font-weight-bold">{{value.item_name}}</span>
+                        <div class="d-flex flex-row product-desc">
+                            <div class="size mr-1"><span class="text-grey">{{value.quantity}}</span><span class="font-weight-bold">&nbsp;{{value.quantity_type}}</span></div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row align-items-center qty"><i class="fa fa-minus text-danger"></i>
+                        <h5 class="text-grey mt-1 mr-1 ml-1" id="count_value">{{value.count}}</h5><i class="fa fa-plus text-success"></i></div>
+                        <div>
+                        <h5 class="text-grey" id="result">Rs. {{value.price}}</h5>
+                    </div>
+                    <button type="button" id="imrcj" class="add-button" onclick="edititembutton('{{ value.item_name }}',{{ value.count }},{{ value.quantity }})">Edit</button>
+				</div>
+                {% endfor %}
+                <div id='someid' class="d-flex flex-row align-items-center mt-3 p-2 bg-white rounded">
+                    <div id="addr">
+                        <h3>Shipping Address</h3>
+                        
+                        <div class="form-group">
+                          <input type="radio" id="default-address" name="address-option" checked>
+                          <label for="default-address">Use Default Address</label>
+                        </div>
+                    
+                        <div class="form-group">
+                          <input type="radio" id="new-address" name="address-option">
+                          <label for="new-address">Give New Address</label>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <form action="buyitems" method="POST">
+                            {% csrf_token %}
+                        
+                            <div class="form-group">
+                              <label for="house-name">House Name:</label>
+                              <input type="text" id="house-name" name="house_name" required value="{{customer.Cust_House}}">
+                            </div>
+                        
+                            <div class="form-group">
+                              <label for="road-name">Road Name:</label>
+                              <input type="text" id="road-name" name="road_name" required value="{{customer.Cust_Road}}">
+                            </div>
+                        
+                            <div class="form-group">
+                              <label for="locality">Locality:</label>
+                              <input type="text" id="locality" name="locality" required value="{{customer.Cust_Locality}}">
+                            </div>
+                        
+                            <div class="form-group">
+                              <label for="district">District:</label>
+                              <input type="text" id="district" name="district" required value="{{customer.Cust_Dist}}">
+                            </div>
+                        
+                            <div class="form-group">
+                                <button class="btn btn-warning btn-block btn-lg ml-2 pay-button" type="submit" onclick="buy()">Proceed to Pay</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <div id="edit-window" class="window">
+        <button id="close-button" onclick="close_edit_item_window()">&times;</button>
+        <form id="edit_item_form" action="edit_user_item" method="post" onsubmit="submit_edit_item(event)">
+          {% csrf_token %}
+          <label >Product Name:</label>
+          <label id="pname_label"> LABEL</label>
+          <br>
+          <label>Quantity: </label>
+          <input type="number" id="qty_input" name= "qty_input" min="0">
+          <button type="submit">SUBMIT</button>
+        </form>
+      </div>
+</body>
+<style>
+.navbar-nav .nav-link {
+    padding-right: 15px ;
+    padding-left: 0;
+}
+</style>
+
+<script>
+    function buy(){
+  fetch('buyitems')
+    .then(response => {
+      if (response.ok) {
+        // Request completed successfully
+        // Handle the response if needed
+      } else {
+        // Handle the error
+      }
+    })
+    .catch(error => {
+      // Handle any network or request error
+    });
+}
+</script>
+
+{% endblock %}

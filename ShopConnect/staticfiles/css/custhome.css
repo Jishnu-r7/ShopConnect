@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Header Styles */
+  header {
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  ul li {
+    display: inline;
+    margin-right: 10px;
+  }
+
+  ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+
+  /* Hero Section Styles */
+  .m_hero {
+    background-color: #f9f9f9;
+    padding: 50px;
+    text-align: center;
+  }
+
+  .m_hero h1 {
+    color: #333;
+  }
+
+  .m_hero p {
+    color: #777;
+  }
+
+  /* Personalized Content Section Styles */
+  .m_personalized-content {
+    padding: 50px;
+  }
+
+  .m_personalized-content label {
+    color: #333;
+    align-items: center;
+  }
+
+  .grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px; 
+  }
+  /* Carousel Styles */
+  .carousel {
+    max-width: 500px; /* Adjust the maximum width as per your requirement */
+    margin: 0 auto;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Shop Card Styles */
+  .m_shop-card {
+    background-color: #f9f9f9;
+    padding: 30px;
+    text-align: center;
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+
+  .m_shop-card:hover{
+    background-color: #ede2e2;
+  }
+
+  .m_shop-card h3 {
+    color: #333;
+  }
+
+  .m_shop-card p {
+    color: #777;
+  }
+
+  #hide{
+    display: none;
+  }
+

@@ -1,0 +1,144 @@
+{% extends "ownerbase.html" %}
+<!DOCTYPE html>
+<head>
+    <title>
+      {% block title %}
+        {% for name in name %}
+          {{name}}
+        {% endfor %}
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <!---CONTAINER-->
+    {% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/ownerhome.css' %}">
+    <script src="{% static 'js/ownerhome.js' %}"></script>
+    <div class="container">
+      {% for name in name %}
+        <h1>{{name}}</h1>
+      {% endfor %}
+  
+      <div id="overlay" onclick="closeWindow()"></div>
+  
+      <div id="new-window" class="window">
+        <button id="close-button" onclick="closeWindow()">&times;</button>
+        <ul id="item-list">
+          {% for item in items %}
+            <li><button id="existing_item" onclick="existing_item_button('{{item.Item_Name}}')">{{item.Item_Name}}</button></li>
+          {% endfor %}
+        </ul>
+        <button class="button" id="add-item-button" onclick="openAddItemWindow()">Add New Item</button>
+      </div>
+
+      <!-- Add Item Window -->
+      <div id="add-item-window" class="window">
+        <button id="close-add-item-button" onclick="closeAddItemWindow()">&times;</button>
+        <form id="add-item-form" action="/owner/owner_add_item" method="post" enctype="multipart/form-data" onsubmit="submitItem(event)">
+          {% csrf_token %}
+          <label >Product Name:</label>
+          <input type="text" id="product-name" name="product-name" required>
+    
+          <label>Product Count:</label>
+          <input type="number" id="product-count" name="product-count" min="1" value="1" required>
+    
+          <label>Product Volume:</label>
+          <input type="number" id="product-volume" name="product-volume" required>
+          <select id="product-sel" name="product-sel">
+            <option value="ML">ML</option>
+            <option value="L">L</option>
+            <option value="G">G</option>
+            <option value="KG">KG</option>
+            <option value="COUNT">COUNT</option>
+          </select>
+          <label>Product Price:</label>
+          <input type="number" id="product-pri" name="product-pri" required>
+          <label>Product Image:</label>
+          <input type="file" id="product-image" name="product-image" accept="image/*" required>
+    
+          <button class="button" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+
+
+    <!--EDIT ITEM WINDOW-->
+      <div id="edit-window" class="window">
+        <button id="close-button" onclick="close_edit_item_window()">&times;</button>
+        <form id="edit_item_form" action="edit_shop_item" method="post" onsubmit="submit_edit_item(event)">
+          {% csrf_token %}
+          <label >Product Name:</label>
+          <label id="pname_label"> LABEL</label>
+          <br>
+          <label>Quantity: </label>
+          <input type="number" id="qty_input" name= "qty_input" min="0">
+          <button type="submit">SUBMIT</button>
+        </form>
+      </div>
+
+      
+      <!--ADD EXISTING ITEM-->
+      {% for object in items %}
+        <div class="data" data-name="{{ object.Item_Name }}" data-id="{{ object.id }}"></div>
+      {% endfor %}
+      <div id="existing-window" class="window">
+        <button id="close-button" onclick="close_existing_item_window()">&times;</button>
+        <form id="existing_item_form" action="submit_existing_item" method="post" onsubmit="submit_existing_item(event)">
+          {% csrf_token %}
+          <label >Product Name:</label>
+          <label id="existing_pname_label"> LABEL</label>
+          <br>
+          <label>Product Count:</label>
+          <input type="number" id="product-count" name="product-count" min="1" value="1" required>
+    
+          <label>Product Volume:</label>
+            <input type="number" id="product-volume" name="product-volume" required>
+          <select id="product-sel" name="product-sel">
+            <option value="ML">ML</option>
+            <option value="L">L</option>
+            <option value="KG">KG</option>
+            <option value="COUNT">COUNT</option>
+          </select>
+          <label>Product Price:</label>
+          <input type="number" id="product-pri" name="product-pri" required>
+          <button type="submit">SUBMIT</button>
+        </form>
+      </div>
+
+          <!--TABLE-->
+          <table>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Volume</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for shop_item, item_name in shop_item %}
+                <tr>
+                  <td>{{ item_name }}</td>
+                  <td>{{ shop_item.Item_Quantity }} {{shop_item.Item_Quantity_Type}}</td>
+                  <td>{{ shop_item.Item_Count }}</td>
+                  <td>{{shop_item.Item_Price}}</td>
+                  <td>
+                    <button id="edit-button" class="add-button" onclick="edititembutton('{{ item_name }}',{{ shop_item.Item_Count }},{{ shop_item.Item_Quantity }})">Edit Value</button>
+                    
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <button class="button" id="open-button" onclick="openWindow1()">Add Item</button>
+          <style>
+            .window {
+              max-height: 70%;
+              overflow-y: auto;
+            }
+          </style>
+          {% endblock %}
+    
+</body>

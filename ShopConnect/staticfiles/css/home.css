@@ -1,0 +1,326 @@
+* {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+  }
+
+  .navbar {
+    box-shadow: 0 10px 10px 0 rgba(59, 65, 66, 0.3);
+  }
+
+  footer {
+    position:fixed;
+      bottom:0px;
+      width:100%;
+      background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .main-button {
+    background-color: #dc302a;
+    border-radius: 100px;
+    box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset, rgba(44, 187, 99, .15) 0 1px 2px, rgba(44, 187, 99, .15) 0 2px 4px, rgba(44, 187, 99, .15) 0 4px 8px, rgba(44, 187, 99, .15) 0 8px 16px, rgba(44, 187, 99, .15) 0 16px 32px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .main-button:hover {
+    box-shadow: rgba(44, 187, 99, .35) 0 -25px 18px -14px inset, rgba(44, 187, 99, .25) 0 1px 2px, rgba(44, 187, 99, .25) 0 2px 4px, rgba(44, 187, 99, .25) 0 4px 8px, rgba(44, 187, 99, .25) 0 8px 16px, rgba(44, 187, 99, .25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+  }
+
+  .gjs-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+  }
+
+  .gjs-cell {
+    min-height: 75px;
+    flex-grow: 1;
+    flex-basis: 100%;
+  }
+
+  #main {
+    height: auto;
+  }
+
+  #card2 {
+    background-repeat: repeat;
+    background-position: left top;
+    background-attachment: scroll;
+    background-size: auto;
+    background-image: linear-gradient(to right, #c8f1c8 0%, #e8f8e7 50%, #ffffff 100%);
+    padding: 0px 0px 4% 2px;
+  }
+
+  #card1 {
+    float: none;
+    flex-direction: row;
+    background-repeat: repeat;
+    background-position: left top;
+    background-attachment: scroll;
+    background-size: auto;
+    background-image: radial-gradient(circle at left, #ffffff 0%, #ffffff 15%, #cdefcc 100%);
+    flex-basis: 100%;
+    padding: 0px 2px 4% 0px;
+  }
+
+  #head1 {
+    padding: 10px;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    font-size: 50px;
+    color: #dddddd;
+    font-weight: 600;
+    margin: 50px 0px 0px 0px;
+  }
+
+  #ikx5 {
+    color: rgba(255, 0, 0, 0.87);
+  }
+
+  #ij9i {
+    color: #000000;
+  }
+
+  #i9xl2 {
+    color: #000000;
+  }
+
+  #irsty {
+    color: rgba(255, 0, 0, 0.87);
+  }
+
+  #head2 {
+    padding: 10px;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    font-size: 50px;
+    color: #dddddd;
+    font-weight: 600;
+    margin: 50px 0px 0px 0px;
+  }
+
+  #text1 {
+    padding: 10px;
+    margin: 50px 100px 0px 100px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    float: none;
+  }
+
+  #text2 {
+    padding: 10px;
+    margin: 50px 100px 0px 100px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+    float: none;
+  }
+
+  #iv84h {
+    margin: 80px 0px 0px 45%;
+    width: 8em;
+    height: 3em;
+  }
+
+  #isy06 {
+    margin: 80px 0px 0px 45%;
+    width: 8em;
+    height: 3em;
+  }
+
+  #abc1 {
+    padding: 10px;
+    margin: 40px 34% 0px 39%;
+    float: none;
+  }
+
+  #itchg {
+    color: rgb(5, 12, 27);
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  #i2nhd {
+    color: #ff0000;
+    margin: 0px 0px 0px 48%;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  #i2nhd:hover {
+    color: rgba(255, 0, 0, 0.55);
+  }
+
+  #iy1hi {
+    color: rgb(5, 12, 27);
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px;
+    text-align: center;
+  }
+
+  #abc2 {
+    padding: 10px;
+    margin: 40px 34% 0px 39%;
+    float: none;
+  }
+
+  #iid4f {
+    color: #ff0000;
+    margin: 0px 0px 0px 48%;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  #iid4f:hover {
+    color: rgba(255, 0, 0, 0.55);
+  }
+
+  #card2:hover {
+    box-shadow: -5px 0 10px 0 black;
+  }
+
+  #card1:hover {
+    box-shadow: -5px 0 10px 0 black;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+
+  #iu7wk {
+    color: black;
+    height: 500px;
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    background-repeat: repeat;
+    background-position: left top;
+    background-attachment: scroll;
+    background-size: auto;
+  }
+
+  #ia1xf {
+    height: 500px;
+  }
+
+  #iaod5 {
+    position: absolute;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    top: 20%;
+    font-family: Verdana, Geneva, sans-serif;
+    letter-spacing: 3px;
+    font-weight: 600;
+    font-size: 39px;
+  }
+
+  #iukht {
+    position: absolute;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    display: flex;
+    top: 40%;
+    font-family: Courier New, Courier, monospace;
+    letter-spacing: 0px;
+    font-weight: 300;
+    font-size: 25px;
+  }
+
+  #i09lq {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    letter-spacing: 3px;
+  }
+
+  @media (max-width: 768px) {
+    .gjs-row {
+      flex-wrap: wrap;
+    }
+  }
+
+  body {
+    background: hsl(220deg, 10%, 97%);
+    margin: 0;
+    padding: 0;
+  }
+
+  #iq7lt {
+    top: 50%;
+    left: 47%;
+  }
+
+  .shop-button {
+    display: flex;
+    position: absolute;
+  }
+
+  .shop-button {
+    --b: 3px;
+    /* border thickness */
+    --s: .45em;
+    /* size of the corner */
+    --color: #373B44;
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+      conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;
+    outline-offset: .6em;
+    font-size: 16px;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .shop-button:hover,
+  .shop-button:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+  }
+
+  .shop-button:active {
+    background: var(--color);
+    color: #fff;
+  }

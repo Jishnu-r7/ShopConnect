@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    background-image: url('https://img.freepik.com/free-vector/supermarket-groceries-set-icons_24877-51040.jpg');
+    background-size: 100% 100%;
+  }
+
+  .login-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    max-width: 400px;
+    margin: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3%;
+
+  }
+
+  .login-container {
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .login-container form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .login-container input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .login-container button {
+    padding: 10px;
+    background-color: black;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .login-container button:hover {
+    background-color: #333;
+  }
+
+  .login-container p {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .login-container p a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  footer{
+      position:fixed;
+      bottom:0px;
+      width:100%;
+      background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    }

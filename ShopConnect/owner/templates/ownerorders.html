@@ -1,0 +1,67 @@
+{% extends "ownerbase.html" %}
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title>
+      Orders
+    </title>
+</head>
+<body>
+  {% block content %}
+  <link rel="stylesheet" href="{% static 'css/ownerorders.css' %}">
+    <div id="heading">
+      <h1>Orders</h1>
+    </div>
+    <table>
+      <tr>
+        <th>
+          Date
+        </th>
+        <th>
+          House Name
+        </th>
+        <th>
+          Road
+        </th>
+        <th>
+          Locality
+        </th>
+        <th>
+          District
+        </th>
+        <th>
+          Total Amount
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+      {% for i in bill %}
+        <tr>
+          <td>
+            {{i.date}}
+          </td>
+          <td>
+            {{i.Cust_House}}
+          </td>
+          <td>
+            {{i.Cust_Road}}
+          </td>
+          <td>
+            {{i.Cust_Locality}}
+          </td>
+          <td>
+            {{i.Cust_Dist}}
+          </td>
+          <td>
+            {{i.Total_Price}}
+          </td>
+          <td>
+            <a href="{% url 'owner:orderdetails' %}?bill_id={{i.id}}"><button>GET</button></a>
+          <td>
+            
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  {% endblock %}
